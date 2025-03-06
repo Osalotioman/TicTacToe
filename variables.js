@@ -4,7 +4,7 @@ var default_settings_items = {
     "page": "page1",
     "playWith": "computer",
     "computerGoes" : "first",
-    "symbolGoesFirst" : "X"
+    "symbolGoesFirst" : "O"
 }
 
 var a = 1;
