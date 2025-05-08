@@ -45,6 +45,22 @@ function adjust_settings(v){
     tl[1] = holdv;
     default_settings_items["page"] = "page2";
     rs();
+  } else if (v == 2) {
+    if (default_settings_items["playWith"] == "computer") {
+      default_settings_items["playWith"] = "human";
+    } else {
+      default_settings_items["playWith"] = "computer";
+    }
+    default_settings_items["page"] = "page2";
+    rs();
+  } else if (v == 3) {
+    if (default_settings_items["difficultyLevel"] == "easy") {
+      default_settings_items["difficultyLevel"] = "hard";
+    } else {
+      default_settings_items["difficultyLevel"] = "easy";
+    }
+    default_settings_items["page"] = "page2";
+    rs();
   }
 }
 window.onload = function(){
