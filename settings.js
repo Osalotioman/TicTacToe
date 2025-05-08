@@ -17,6 +17,14 @@ function rs(){
     con1 = ["", false, 0];
     t = 0;
     setTimeout(default_settings, 250);
+    if (default_settings_items["playWith"] == "human") {
+        ava = true;
+    } else {
+        ava = false;
+    }
+    if (default_settings_items["computerGoes"] == "first") {
+        ai();
+    }
 }
 
 function compF(){
@@ -58,6 +66,22 @@ function adjust_settings(v){
       default_settings_items["difficultyLevel"] = "hard";
     } else {
       default_settings_items["difficultyLevel"] = "easy";
+    }
+    default_settings_items["page"] = "page2";
+    rs();
+  } else if (v == 4) {
+    if (default_settings_items["computerGoes"] == "first") {
+      default_settings_items["computerGoes"] = "second";
+    } else {
+      default_settings_items["computerGoes"] = "first";
+    }
+    default_settings_items["page"] = "page2";
+    rs();
+  } else if (v == 5) {
+    if (default_settings_items["playWith"] == "human") {
+      default_settings_items["playWith"] = "computer";
+    } else {
+      default_settings_items["playWith"] = "human";
     }
     default_settings_items["page"] = "page2";
     rs();
