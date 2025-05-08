@@ -28,7 +28,7 @@ function occupy_non_corner_cell(){
 function occupy_adjacent_cell(){
   let por = getRandomInt(1, 2);
   while(true){
-    if(cell(con1l[con1[2]][por][0], con1l[con1[2]][por][1], 'r', null) == "_"){cell(con1l[con1[2]][por][0], con1l[con1[2]][por][1], 's', tl[t%2]); break;}
+    if(cell(con1l[con1[2]][por][0], con1l[con1[2]][por][1], 'r', null) == "_"){cell(con1l[con1[2]][por][0], con1l[con1][por][1], 's', tl[t%2]); break;}
     por =  getRandomInt(1, 2);
   }
 }

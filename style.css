@@ -76,3 +76,100 @@ label {
 #game{
   display: none;
 }
+
+/* P1752 */
+#board {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+td {
+  transition: background-color 0.3s ease;
+}
+
+td:hover {
+  background-color: #f0f0f0;
+}
+
+.button_style {
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button_style:hover {
+  background-color: #005f00;
+}
+
+/* P2155 */
+.settings-container {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e1e2f;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  color: #ffffff;
+}
+
+.settings-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.settings-group {
+  margin-bottom: 15px;
+}
+
+.settings-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.settings-group select,
+.settings-group input[type="checkbox"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2a2a3e;
+  color: #ffffff;
+}
+
+.settings-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+.settings-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.settings-footer button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #d9534f;
+  color: white;
+  font-weight: bold;
+}
+
+.settings-footer button:hover {
+  background-color: #c12f2a;
+}
+
+.help-btn {
+  background-color: #5bc0de;
+}
+
+.help-btn:hover {
+  background-color: #31b0d5;
+}
