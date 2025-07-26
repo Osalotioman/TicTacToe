@@ -1,80 +1,74 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>TicTacToe</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="switches.css">
-    </head>
-    <body>
-        <!--Page 1-->
-        <div id="game">
-            <div id = "gn">
-                TicTacToe: <a href="https://github.com/OsazuwaEmmanuel/TicTacToe.git">Github</a><br>
-                <button class="button_style" onclick="rs()">StartOver</button>
-                <button class="button_style" onclick="st('show_settings')">Settings</button>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe</title>
+    <link rel="stylesheet" href="style_new.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TicTacToe</h1>
+            <div class="controls">
+                <button id="newGame" class="btn">New Game</button>
+                <button id="settingsBtn" class="btn">Settings</button>
             </div>
-            <table id="board">
-                <tr>
-                    <td class="c" id="a3" onclick="ttt(a, 3, 'a3')"></td>
-                    <td class="c" id="b3" onclick="ttt(b, 3, 'b3')"></td>
-                    <td class="c" id="c3" onclick="ttt(c, 3, 'c3')"></td>
-                </tr>
-                <tr>
-                    <td class="c" id="a2" onclick="ttt(a, 2, 'a2')"></td>
-                    <td class="c" id="b2" onclick="ttt(b, 2, 'b2')"></td>
-                    <td class="c" id="c2" onclick="ttt(c, 2, 'c2')"></td>
-                </tr>
-                <tr>
-                    <td class="c" id="a1" onclick="ttt(a, 1, 'a1')"></td>
-                    <td class="c" id="b1" onclick="ttt(b, 1, 'b1')"></td>
-                    <td class="c" id="c1" onclick="ttt(c, 1, 'c1')"></td>
-                </tr>
-            </table>
+        </header>
+
+        <main id="gameArea">
+            <div class="game-info">
+                <div id="currentPlayer">Current Player: X</div>
+                <div id="gameStatus"></div>
+            </div>
+
+            <div class="game-board" id="gameBoard">
+                <div class="cell" data-cell="0"></div>
+                <div class="cell" data-cell="1"></div>
+                <div class="cell" data-cell="2"></div>
+                <div class="cell" data-cell="3"></div>
+                <div class="cell" data-cell="4"></div>
+                <div class="cell" data-cell="5"></div>
+                <div class="cell" data-cell="6"></div>
+                <div class="cell" data-cell="7"></div>
+                <div class="cell" data-cell="8"></div>
+            </div>
+        </main>
+
+        <div id="settingsPanel" class="settings-panel hidden">
+            <h2>Game Settings</h2>
+            
+            <div class="setting-group">
+                <label>Game Mode:</label>
+                <select id="gameMode">
+                    <option value="human">Human vs Human</option>
+                    <option value="ai">Human vs AI</option>
+                </select>
+            </div>
+
+            <div class="setting-group">
+                <label>First Player:</label>
+                <select id="firstPlayer">
+                    <option value="X">X goes first</option>
+                    <option value="O">O goes first</option>
+                </select>
+            </div>
+
+            <div class="setting-group" id="aiDifficultyGroup">
+                <label>AI Difficulty:</label>
+                <select id="aiDifficulty">
+                    <option value="easy">Easy</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+
+            <div class="settings-actions">
+                <button id="applySettings" class="btn">Apply</button>
+                <button id="cancelSettings" class="btn btn-secondary">Cancel</button>
+            </div>
         </div>
-        <!--Page 2-->
-        <div id="settings_page">
-          <h2>Player X plays first:
-          <label class="switch">
-            <input type="checkbox" onclick="adjust_settings(1)" checked>
-            <span class="slider round"></span>
-          </label>
-          </h2>
-          <br>
-          <h2>Play with:
-          <label class="switch">
-            <input type="checkbox" onclick="adjust_settings(2)" checked>
-            <span class="slider round"></span>
-          </label>
-          </h2>
-          <br>
-          <h2>Difficulty Level:
-          <label class="switch">
-            <input type="checkbox" onclick="adjust_settings(3)" checked>
-            <span class="slider round"></span>
-          </label>
-          </h2>
-          <br>
-          <h2>AI goes first:
-          <label class="switch">
-            <input type="checkbox" onclick="adjust_settings(4)" checked>
-            <span class="slider round"></span>
-          </label>
-          </h2>
-          <br>
-          <h2>Human vs AI:
-          <label class="switch">
-            <input type="checkbox" onclick="adjust_settings(5)" checked>
-            <span class="slider round"></span>
-          </label>
-          </h2>
-          <br>
-          <button onclick="st('return_to_game')" class="button_style">Return</button>
-        </div>
-        <script src="variables.js"></script>
-        <script src="script.js"></script>
-        <script src="settings.js"></script>
-    </body>
+    </div>
+
+    <script src="script_new.js"></script>
+</body>
 </html>

@@ -1,175 +1,238 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-#board {
-  width: 330px;
-  height: 330px;
-  border: 8px solid black;
-  background-size: cover;
-  border-collapse: collapse;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-tr, td {
-  border: 5px dashed black;
+
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
 }
-td {
-    width: 100px;
-    height: 100px;
+
+header {
     text-align: center;
-    font-size: 60px;
-}
-#gn{
-  color: green;
-  font-size: 37px;
-}
-/* Custom checkbox styling */
-input[type="checkbox"] {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 30px;
-  height: 30px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
-  cursor: pointer;
-  vertical-align: middle;
+    margin-bottom: 2rem;
 }
 
-input[type="checkbox"]:checked {
-  background-color: #007bff;
+h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Custom label styling */
-label {
-  margin-left: 5px;
-  vertical-align: middle;
-  font-size: 30px;
-  font-family: 'Times New Roman', Times, serif;
-}
-#subs{
-  color: black;
-  font-size: 40px;
-}
-.button_style{
-  background-color:green;
-  font-size: 15px;
-  width: 100px;
-  height: 50px;
-}
-#hoai{
-  width: 100%;
-}
-#pai, #phm{
-  width: 50%;
-  background-color: green;
-}
-#settings_page{
-  display: none;
-  text-align: center;
-}
-#game{
-  display: none;
+.controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }
 
-/* P1752 */
-#board {
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-td {
-  transition: background-color 0.3s ease;
+.btn:hover {
+    background: #5a6fd8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
-td:hover {
-  background-color: #f0f0f0;
+.btn-secondary {
+    background: #6c757d;
 }
 
-.button_style {
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+.btn-secondary:hover {
+    background: #545b62;
 }
 
-.button_style:hover {
-  background-color: #005f00;
+.game-info {
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
-/* P2155 */
-.settings-container {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1e1e2f;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  padding: 20px;
-  color: #ffffff;
+#currentPlayer {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
 }
 
-.settings-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
+#gameStatus {
+    font-size: 1.1rem;
+    font-weight: 500;
+    min-height: 1.5rem;
 }
 
-.settings-group {
-  margin-bottom: 15px;
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 8px;
+    max-width: 300px;
+    margin: 0 auto;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.settings-group label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 5px;
+.cell {
+    aspect-ratio: 1;
+    background: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    user-select: none;
 }
 
-.settings-group select,
-.settings-group input[type="checkbox"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #2a2a3e;
-  color: #ffffff;
+.cell:hover {
+    background: #f0f0f0;
+    transform: scale(0.95);
 }
 
-.settings-group input[type="checkbox"] {
-  width: auto;
-  margin-right: 10px;
+.cell.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
 }
 
-.settings-footer {
-  display: flex;
-  justify-content: space-between;
+.cell.x {
+    color: #e74c3c;
 }
 
-.settings-footer button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #d9534f;
-  color: white;
-  font-weight: bold;
+.cell.o {
+    color: #3498db;
 }
 
-.settings-footer button:hover {
-  background-color: #c12f2a;
+.cell.winning {
+    background: #f39c12;
+    color: white;
+    animation: pulse 0.6s ease-in-out;
 }
 
-.help-btn {
-  background-color: #5bc0de;
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
-.help-btn:hover {
-  background-color: #31b0d5;
+.settings-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    min-width: 300px;
+}
+
+.settings-panel.hidden {
+    display: none;
+}
+
+.settings-panel h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.setting-group {
+    margin-bottom: 1rem;
+}
+
+.setting-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.setting-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+}
+
+.setting-group select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.settings-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .game-board {
+        max-width: 250px;
+    }
+    
+    .cell {
+        font-size: 2.5rem;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
 }
