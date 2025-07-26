@@ -18,7 +18,7 @@ function rs(){
     t = 0;
     setTimeout(default_settings, 250);
     if (default_settings_items["playWith"] == "human") {
-        ava = true;
+        ava = false;
     } else {
         ava = false;
     }
